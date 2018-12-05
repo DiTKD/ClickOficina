@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ClickOficina.Views.Login">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="E-mail"  HorizontalOptions="Center" />
+            <Entry x:Name="txtEmail" Text="{Binding usuarioBinding.name}"
+                   Placeholder="Usuario" WidthRequest="250" />
+            <Label Text="Senha"  HorizontalOptions="Center" />
+            <Entry x:Name="pwdSenha" Text="{Binding usuarioBinding.password}"
+                   Placeholder="Senha" IsPassword="True" WidthRequest="250" />
+            <StackLayout Padding="10" Orientation="Horizontal"
+                         HorizontalOptions="Center" VerticalOptions="Center">
+                <Button x:Name="btnLogin" Text="Entrar" Command="{Binding OnUsuariologin}"
+                        CommandParameter="{Binding usuarioBinding}"/>
+                <Button x:Name="btncadastro" Text="Cadastrar" Clicked="cadastro_Clicked"
+                        />
+
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
